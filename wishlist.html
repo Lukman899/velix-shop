@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VELIX | Wishlist</title>
+
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+<style>
+    #wishlist-container .bg-white {
+        background-color: #1c1c1c !important;
+    }
+
+    #wishlist-container .border-slate-200,
+    #wishlist-container .border-slate-300 {
+        border-color: #353535 !important;
+    }
+
+    #wishlist-container .divide-slate-200 > :not(:first-child) {
+        border-color: #353535 !important;
+    }
+
+    #wishlist-container .text-slate-900,
+    #wishlist-container .text-slate-800,
+    #wishlist-container .text-gray-900,
+    #wishlist-container .text-gray-800 {
+        color: #ffffff !important;
+    }
+
+    #wishlist-container .text-slate-500,
+    #wishlist-container .text-slate-600,
+    #wishlist-container .text-gray-500,
+    #wishlist-container .text-gray-600 {
+        color: #b3b3b3 !important;
+    }
+
+    #wishlist-container .wishlist-add-cart-btn {
+        background-color: #dc2626 !important;
+        border-color: #dc2626 !important;
+        color: #ffffff !important;
+        border-radius: 8px;
+    }
+
+    #wishlist-container .wishlist-add-cart-btn:hover {
+        background-color: #b91c1c !important;
+        color: #ffffff !important;
+    }
+
+   
+#wishlist-container .wishlist-remove-btn {
+    background-color: #dc2626 !important;
+    border: 1px solid #dc2626 !important;
+    color: #ffffff !important;
+    border-radius: 8px;
+}
+
+#wishlist-container .wishlist-remove-btn:hover {
+    background-color: #b91c1c !important;
+    border-color: #b91c1c !important;
+    color: #ffffff !important;
+}
+
+#wishlist-container .wishlist-remove-btn span,
+#wishlist-container .wishlist-remove-btn svg {
+    color: #ffffff !important;
+    stroke: currentColor !important;
+}
+
+
+    #wishlist-container .wishlist-add-cart-btn svg,
+    #wishlist-container .wishlist-remove-btn svg {
+        color: inherit !important;
+        stroke: currentColor !important;
+    }
+
+    #wishlist-container img {
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    #wishlist-container a:hover {
+        color: #ef4444 !important;
+    }
+</style>
+
+</head>
+
+<body class="velix-store min-h-screen flex flex-col bg-[#111111] text-white font-sans antialiased">
+
+    <!-- NAVBAR -->
+    <header class="bg-[#111111] border-b border-[#303030] sticky top-0 z-50">
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-8 min-h-20 py-4 flex flex-wrap items-center justify-between gap-4">
+
+            <a href="index.html"
+                class="text-2xl font-black tracking-tight text-white shrink-0">
+                VELIX<span class="text-red-500">.</span>
+            </a>
+
+            <nav class="flex items-center gap-3 sm:gap-6 text-xs sm:text-sm font-semibold">
+
+                <a href="index.html"
+                    class="text-gray-400 hover:text-red-500 transition">
+                    HOME
+                </a>
+
+                <a href="wishlist.html"
+                    class="text-red-500 transition flex items-center gap-1.5">
+
+                    WISHLIST
+
+                    <span id="wishlist-count"
+                        class="bg-red-600 text-white px-2 py-0.5 rounded-full text-xs">
+                        0
+                    </span>
+                </a>
+
+                <a href="cart.html"
+                    class="text-gray-400 hover:text-red-500 transition flex items-center gap-1.5">
+
+                    CART
+
+                    <span id="cart-count"
+                        class="bg-red-600 text-white px-2 py-0.5 rounded-full text-xs">
+                        0
+                    </span>
+                </a>
+
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow w-full max-w-6xl mx-auto px-4 sm:px-8 py-10 sm:py-16">
+
+        <!-- PAGE HEADING -->
+        <div class="text-center mb-10 sm:mb-12">
+
+            <p class="text-red-500 text-xs font-bold tracking-[3px] mb-4">
+                YOUR FAVORITES
+            </p>
+
+            <h1 class="text-3xl sm:text-5xl font-black tracking-tight">
+                MY <span class="text-red-500">WISHLIST.</span>
+            </h1>
+
+            <p class="text-gray-400 text-sm mt-5">
+                All the products you love, in one place.
+            </p>
+
+        </div>
+
+        <!-- WISHLIST ITEMS -->
+        <div id="wishlist-container">
+
+            <!-- Empty Wishlist State -->
+            <div class="bg-[#1c1c1c] border border-[#353535] rounded-2xl p-6 sm:p-12 text-center max-w-md mx-auto my-8">
+
+                <div class="w-16 h-16 mx-auto mb-4 text-red-500 flex items-center justify-center">
+
+                    <svg class="w-12 h-12"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24">
+
+                        <path stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                        </path>
+
+                    </svg>
+
+                </div>
+
+                <h2 class="text-xl font-semibold text-white mb-2">
+                    Your wishlist is empty
+                </h2>
+
+                <p class="text-gray-400 text-sm mb-6">
+                    Looks like you haven't saved any products to your wishlist yet.
+                </p>
+
+                <a href="index.html"
+                    class="inline-flex items-center justify-center bg-red-600 hover:bg-red-700 text-white font-medium px-6 py-3 rounded-lg transition text-sm">
+                    Start Shopping
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-[#303030] py-6 mt-auto">
+
+        <div class="max-w-6xl mx-auto px-4 text-center text-sm text-gray-500">
+            <p>© 2026 VELIX. All rights reserved.</p>
+        </div>
+
+    </footer>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
